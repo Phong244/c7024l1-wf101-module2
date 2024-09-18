@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm trung bình</title>
+    <script>
+        function tinhDiemTrungBinh() {
+            let toan = parseFloat(prompt("Nhập điểm Toán:"));
+            let ly = parseFloat(prompt("Nhập điểm Lý:"));
+            let hoa = parseFloat(prompt("Nhập điểm Hoá:"));
+
+            if (isNaN(toan) || isNaN(ly) || isNaN(hoa)) {
+                alert("Vui lòng nhập điểm hợp lệ.");
+            } else {
+                let diemTB = (toan + ly + hoa) / 3;
+                alert("Điểm trung bình cộng là: " + diemTB.toFixed(2));
+            }
+        }
+    </script>
+</head>
+<body>
+<button onclick="tinhDiemTrungBinh()">Tính điểm trung bình</button>
+</body>
+</html>

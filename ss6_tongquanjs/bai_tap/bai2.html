@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm trung bình</title>
+    <script>
+        function tinhDiemTrungBinh() {
+            let toan = parseFloat(document.getElementById("toan").value);
+            let ly = parseFloat(document.getElementById("ly").value);
+            let hoa = parseFloat(document.getElementById("hoa").value);
+            let ketQua = document.getElementById("ketQua");
+
+            if (isNaN(toan) || isNaN(ly) || isNaN(hoa)) {
+                ketQua.textContent = "Vui lòng nhập điểm hợp lệ.";
+            } else {
+                let diemTB = (toan + ly + hoa) / 3;
+                ketQua.textContent = "Điểm trung bình cộng là: " + diemTB.toFixed(2);
+            }
+        }
+    </script>
+</head>
+<body>
+<label for="toan">Điểm Toán:</label>
+<input type="number" id="toan"><br>
+<label for="ly">Điểm Lý:</label>
+<input type="number" id="ly"><br>
+<label for="hoa">Điểm Hoá:</label>
+<input type="number" id="hoa"><br>
+<button onclick="tinhDiemTrungBinh()">Tính điểm trung bình</button>
+<h1 id="ketQua"></h1>
+</body>
+</html>
