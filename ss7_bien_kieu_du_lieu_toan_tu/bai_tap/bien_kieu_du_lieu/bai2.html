@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi độ C sang độ F</title>
+</head>
+<body>
+
+<h1>Chuyển đổi độ C sang độ F</h1>
+
+<button onclick="convertCtoF()">Nhập giá trị độ C và chuyển đổi</button>
+
+<p id="result"></p>
+
+<script>
+    function convertCtoF() {
+        // Nhập giá trị độ C
+        let celsius = parseFloat(prompt("Nhập giá trị độ C: "));
+
+        // Công thức chuyển đổi từ độ C sang độ F
+        let fahrenheit = (celsius * 9/5) + 32;
+
+        // Output ra kết quả
+        document.getElementById("result").innerHTML =
+            celsius + "°C = " + fahrenheit.toFixed(2) + "°F";
+    }
+</script>
+
+</body>
+</html>

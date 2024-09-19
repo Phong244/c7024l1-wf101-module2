@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính diện tích hình tròn</title>
+</head>
+<body>
+
+<h1>Tính diện tích hình tròn</h1>
+
+<button onclick="calculateArea()">Nhập bán kính và tính diện tích</button>
+
+<p id="result"></p>
+
+<script>
+    function calculateArea() {
+        const PI = 3.14
+        // Nhập bán kính
+        let radius = parseFloat(prompt("Nhập bán kính hình tròn: "));
+
+        // Tính diện tích theo công thức: S = π × r^2
+        let area = PI * Math.pow(radius, 2);
+
+        // Output kết quả
+        document.getElementById("result").innerHTML =
+            "Diện tích hình tròn có bán kính " + radius + " là: " + area.toFixed(2) + " đơn vị diện tích.";
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>
+      <label for="Amount">Amount</label>
+    </th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><input type="number" id="Amount"></td>
+    <td>
+      <select id="From">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </td>
+    <td>
+      <select id="To">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+      </select>
+    </td>
+    <td>
+      <button onclick="ChangeMoney()">Convert</button>
+    </td>
+  </tr>
+</table>
+
+<br>
+<p id="Result"></p>
+
+
+
+<script>
+  function ChangeMoney() {
+    const exchangeRate = 24000; // Tỉ giá 1 USD = 24,000 VND
+    let amount = parseFloat(document.getElementById("Amount").value);
+    let fromCurrency = document.getElementById("From").value;
+    let toCurrency = document.getElementById("To").value;
+
+    let result;
+
+    if (fromCurrency === toCurrency) {
+      result = amount; // Nếu cùng loại tiền tệ thì kết quả không thay đổi
+    } else if (fromCurrency === 'VND' && toCurrency === 'USD') {
+      result = amount / exchangeRate; // Chuyển từ VND sang USD
+    } else if (fromCurrency === 'USD' && toCurrency === 'VND') {
+      result = amount * exchangeRate; // Chuyển từ USD sang VND
+    }
+
+    // Hiển thị kết quả
+    document.getElementById("Result").innerHTML =
+            `Kết quả: ${amount} ${fromCurrency} = ${result.toFixed(2)} ${toCurrency}`;
+  }
+
+</script>
+</body>
+</html>
