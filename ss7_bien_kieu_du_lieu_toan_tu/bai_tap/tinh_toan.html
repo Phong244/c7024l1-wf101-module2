@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy Tính</title>
+</head>
+<body>
+<input id="n1">
+<input id="n2"><br>
+<button onclick="tinhToan('+')">+</button>
+<button onclick="tinhToan('-')">-</button>
+<button onclick="tinhToan('*')">*</button>
+<button onclick="tinhToan('/')">/</button><br>
+<p id="result"></p>
+<script>
+    let result = 0;
+    function tinhToan(toanTu){
+        let num1 = parseFloat(document.getElementById("n1").value);
+        let num2 = parseFloat(document.getElementById("n2").value);
+        result = eval(num1+toanTu+num2);
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>
