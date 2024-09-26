@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doanhSo = +prompt("nhap doanh so ban hang: ")
+    if(doanhSo<2000000){
+        let hoaHong = doanhSo*3/100
+        document.write(`tien hoa hong nhan duoc la ${hoaHong}`)
+    }else if(doanhSo<5000000){
+        let hoaHong = doanhSo*5/100
+        document.write(`tien hoa hong nhan duoc la ${hoaHong}`)
+    }else{
+        let hoaHong = doanhSo*10/100
+        document.write(`tien hoa hong nhan duoc la ${hoaHong}`)
+    }
+</script>
+</body>
+</html>

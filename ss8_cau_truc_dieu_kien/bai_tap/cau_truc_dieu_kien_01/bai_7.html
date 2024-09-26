@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soPhut = +prompt("Nhap so phut da su dung")
+    const feeDefault = 25000;
+    let tongTien =  feeDefault;
+    if(soPhut <= 50) {
+        tongTien += soPhut*600;
+    } else if (soPhut <= 200){
+        tongTien += 50*600+ (soPhut - 50) *400;
+    } else {
+        tongTien += 50*600+150*400+(soPhut-200)*200;
+    }
+    document.write(`Tổng tiền cước điện thoại của hộ gia đình là ${tongTien}`)
+</script>
+</body>
+</html>
