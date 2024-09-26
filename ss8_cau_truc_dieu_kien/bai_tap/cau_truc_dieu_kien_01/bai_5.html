@@ -6,10 +6,10 @@
 </head>
 <body>
 <script>
-    let a = parseFloat(prompt("nhap so nguyen a ="));
-    let b = parseFloat(prompt("nhap so nguyen b ="));
-    let c = parseFloat(prompt("nhap so nguyen c ="));
-    let avg = (a+b+c)/3;
+    let baiKiemTra = parseFloat(prompt("nhap diem kiem tra ="));
+    let baiGiuaKi = parseFloat(prompt("nhap diem giua ki ="));
+    let baiCuoiki = parseFloat(prompt("nhap diem cuoi ki ="));
+    let avg = (baiKiemTra+baiGiuaKi+baiCuoiki)/3;
     if(avg>9){
         document.write(`diem trung binh la ${avg} dat hang A`);
     } else if(avg>7){
