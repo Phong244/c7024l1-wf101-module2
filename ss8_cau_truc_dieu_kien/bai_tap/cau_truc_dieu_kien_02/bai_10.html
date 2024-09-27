@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soDienSuDung = +prompt('nhap so dien su dung');
+    let tienDien = 0;
+    if (soDienSuDung<=50){
+        tienDien = soDienSuDung*1700;
+    }else if(soDienSuDung<300){
+        tienDien = soDienSuDung*2000;
+    }else if(soDienSuDung<500){
+        tienDien = soDienSuDung*2500;
+    }else{
+        tienDien = soDienSuDung*3000;
+    }
+    console.log(tienDien);
+</script>
+</body>
+</html>

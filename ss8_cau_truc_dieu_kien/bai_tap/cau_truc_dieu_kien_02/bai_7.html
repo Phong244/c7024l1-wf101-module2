@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("nhap a"))
+    let b = parseInt(prompt("nhap b"))
+    let c = parseInt(prompt("nhap c"))
+    let delta = Math.pow(b,2)-4*a*c
+    if(delta>0){
+        let x1 = (-b+Math.sqrt(delta))/(2*a);
+        let x2 = (-b-Math.sqrt(delta))/(2*a);
+        console.log(`phuong trinh co 2 nghiem duy nhat x1 = ${x1} va x2 = ${x2}`);
+    })else if(delta=0){
+        let x3 = -b/(2*a);
+        console.log(`phuong trinh co nghiem kep x = ${x3}`);
+    }else{
+        console.log('phuong trinh vo nghiem');
+    }
+</script>
+</body>
+</html>

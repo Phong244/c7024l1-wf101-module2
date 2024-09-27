@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let thueCanNop = 0;
+    let thuNhapCaNhan = +prompt('nhap so dien su dung');
+    if (thuNhapCaNhan<=5000000){
+        thueCanNop = thuNhapCaNhan*0.05;
+    }else if(thuNhapCaNhan<10000000){
+        thueCanNop = thuNhapCaNhan*0.1;
+    }else if(thuNhapCaNhan<20000000){
+        thueCanNop = thuNhapCaNhan*0.15;
+    }else{
+        thueCanNop = thuNhapCaNhan*0.2;
+    }
+    console.log(`so thue thu nhap la ${thuNhapCaNhan} phai tra thue la: ${thueCanNop}`);
+</script>
+</body>
+</html>
