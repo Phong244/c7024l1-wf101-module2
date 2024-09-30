@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("nhập số số nguyên tố cần in ra:"))
+    let count = 0;
+    let num = 2;
+    let result ="";
+    while(count<n){
+        let isPrime = true;
+        for(let i = 2;i<=Math.sqrt(num);i++){
+            if(num%i==0){
+                isPrime = false;
+                break;
+            }
+        }
+        if(num>1 && isPrime){
+            result += num + "<br>";
+            count++;
+        }
+        num++;
+    }
+    document.write(`${n} số nguyên tố đầu tiên là <br> ${result}` );
+</script>
+</body>
+</html>

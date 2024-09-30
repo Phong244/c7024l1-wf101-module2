@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Gameeeeee!!!</h1>
+<button onclick="startGame()">Chiến thôi</button>
+<script>
+  function startGame(){
+    let min = parseInt(prompt("Nhập số nhỏ nhất trong khoảng"));
+    let max = parseInt(prompt("Nhập số lớn nhất trong khoảng"));
+    let randomNum = Math.floor(Math.random()*((max-min)/1+1))+min;
+    let tryGuess = 0;
+    const MAXGUESS = 3;
+    while (tryGuess<MAXGUESS){
+        let guess = parseInt(prompt('Giỏi đoán đê'));
+        tryGuess++;
+        if(guess===randomNum){
+            alert(`Bạn đã đoán đúng số sau ${tryGuess} lần thử`);
+            break;
+        }else if(guess>randomNum){
+            alert('Số bạn nhập lớn hơn số random');
+        }else{
+            alert('Số bạn nhập nhỏ hơn số random');
+        }
+        if(tryGuess===MAXGUESS){
+            alert(`Bạn đã hết lượt. Số ngẫu nhiên là ${randomNum}`);
+        }
+    }
+  }
+</script>
+</body>
+</html>
