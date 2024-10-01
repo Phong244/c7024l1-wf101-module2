@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let soTienBanDau = +prompt('nhap so tien ban dau: ');
+    let soThangChoVay = +prompt('nhap so thang cho vay: ');
+    const LAIXUAT = 10/100;
+    let laiPhaiTra = 0;
+    for (let i =1;i<=soThangChoVay;i++){
+        laiPhaiTra += soTienBanDau*LAIXUAT;
+        soTienBanDau += laiPhaiTra;
+    }
+    console.log(laiPhaiTra)
+</script>
+</body>
+</html>
