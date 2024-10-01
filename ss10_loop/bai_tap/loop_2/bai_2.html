@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    do{
+        n = parseInt(prompt('nhap so nguyen duong'));
+    }while (n<0);
+    let giaiThua = 1;
+    for(let i = 1;i<=n;i++){
+        giaiThua *= i;
+    }
+    document.write(`giai thua cua ${n} bang ${giaiThua}`);
+</script>
+</body>
+</html>

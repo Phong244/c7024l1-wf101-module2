@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let kichCo = 5;
+    let inRa = '';
+    //h1
+    for (let i = 1;i<=kichCo;i++){
+        for (let j=1;j<=i;j++){
+            inRa += "*";
+        }
+        inRa += "<br>";
+    }
+    inRa += "<br>";
+    //h2
+    for (let i = 1;i<=kichCo;i++){
+        for (let j=1;j<=kichCo-i;j++){
+            inRa += '_';
+        }
+        for (let j=1;j<=i;j++){
+            inRa += "*";
+        }
+        inRa += "<br>";
+    }
+    inRa += "<br>";
+    console.log('inRa',inRa);
+    console.log('kichCo',kichCo);
+    //h3
+    for (let i = kichCo;i>=1;i--){
+        for (let j = 1;j<=i;j++){
+            inRa += "*";
+        }
+        inRa += "<br>";
+    }
+    inRa += "<br>";
+    //h4
+    for (let i = kichCo;i>=1;i--){
+        for (let j=1;j<=kichCo-i;j++){
+            inRa += "_";
+        }
+        for (let j=1;j<=i;j++) {
+            inRa += "*";
+        }
+        inRa += "<br>";
+    }
+    inRa += "<br>";
+    document.write(inRa)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let width = 10;
+    let height = 6;
+    for(let i=1; i<=height;i++){
+        for (let j =1;j<=width;j++){
+            if (i===1 || i===height || j===1 || j===width){
+                document.write("*");
+            }else {
+                document.write("_");
+            }
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>
