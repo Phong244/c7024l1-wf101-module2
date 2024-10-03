@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function swapCase(str) {
+        let result = '';
+
+        for (let i = 0; i < str.length; i++) {
+            let char = str[i];
+            if (char === char.toLowerCase()) {
+                result += char.toUpperCase();
+            } else {
+                result += char.toLowerCase();
+            }
+        }
+        return result;
+    }
+
+    let input = 'The Quick Brown Fox';
+    console.log(swapCase(input));
+</script>
+</body>
+</html>

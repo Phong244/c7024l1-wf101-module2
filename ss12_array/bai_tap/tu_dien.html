@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra từ điển cơ bản</title>
+</head>
+<body>
+<h2>Tra cứu từ điển Anh-Việt</h2>
+<label for="word">Nhập từ tiếng Anh:</label>
+<input type="text" id="word">
+<button onclick="searchWord()">Tìm kiếm</button>
+<p id="result"></p>
+
+<script>
+    let englishWords = ['hello', 'apple', 'car', 'house', 'dog'];
+    let vietnameseWords = ['xin chào', 'táo', 'xe hơi', 'ngôi nhà', 'chó'];
+
+    function searchWord() {
+        let word = document.getElementById('word').value.toLowerCase();
+        let index;
+
+        // Tìm từ trong mảng tiếng Anh
+        for (let i = 0; i < englishWords.length; i++) {
+            if (englishWords[i] === word) {
+                index = i; // Lưu vị trí nếu tìm thấy từ
+                break;
+            }
+        }
+
+        // Hiển thị kết quả
+        let resultElement = document.getElementById('result');
+        if (index !== -1) {
+            resultElement.innerHTML = 'Từ tiếng Việt: ' + vietnameseWords[index];
+        } else {
+            resultElement.innerHTML = 'Không tìm thấy từ bạn vừa nhập.';
+        }
+    }
+</script>
+</body>
+</html>

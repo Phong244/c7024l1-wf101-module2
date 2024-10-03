@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let student1 = "Phong";
+    // let student2 = "Linh";
+    // let student2 = "Tri";
+    // ...
+    // Array
+    // một biến -> đặc biệt lưu trữ nhiều giá trị
+    // các giá trị bên trong gọi là phần tử (element)
+    //các phần tử sắp xếp liền kề nhau trong ô nhớ và có một chỉ số ( index)
+    // số lượng phần tử trong mảng là độ dài mảng(lenght)
+    //phần tử đầu có index = 0;
+    //phần tử cuối cùng có độ dài là lenght-1
+    //mảng trong js có thể thay đổi độ dài
+    // có thể lưu trữ nhiều kiểu dữ liệu khác nhau trong cùng 1 mảng
+    let students=["Phong","Linh","Tri"];//mảng chuỗi độ dài 3
+    // console.log(students.length) //3
+    students[3] = "Chanh";
+    // console.log(students.length); //4
+    let student = [1,"Chanh",40,"Đà Nẵng",true]// lưu được nhiều kiểu dữ liệu
+    //cách 1: sử dụng []
+    let numbers =[1,13,15,7] // mảng số
+    //cách 2: sử dụng từ khoá new Array()
+    let numbers2 = new Array(1,3,6,8);
+    let numbers3 = Array(2,14,45,6,7,9); // TH đặc biệt
+    let numbers4 = new Array(5); //nếu là số nguyên là độ dài của mảng là 5, và các phân tử bên trong là undefined
+    let strings = new Array("5"); // mảng có 1 phần tử có giá trị là 5
+    //duyệt mảng: đi qua lần lượt các phần tử của mảng;
+    //Để duyệt mảng thường dùng vòng lặp for ( biết trước số lần lặp)
+    // for (let i = 0; i < numbers3.length; i++) {
+    //     console.log("index: "+i+"-value: "+numbers3[i]);
+    // }
+    // for (let i = 0; i < strings.length; i++) {
+    //     console.log("index: "+i+"-value: "+strings[i]);
+    // }
+    // tìm ra giá trị lớn nhất trong mảng
+    // let max = numbers3[0];
+    // for (let i = 1; i < numbers3.length; i++) {
+    //     if(max < numbers3[i]){
+    //         max = numbers3[i];
+    //     }
+    // }
+    // alert("giá trị lớn nhất: "+max)
+    // sử  dụng for cải tiến
+    //for-in:
+    // for (let indx in numbers3) {
+    //     console.log(indx+": "+numbers3[indx]);
+    // }
+    //for-of
+    // for(let student of students){
+    //     console.log(student)
+    // }
+    //in gia tri tu cuoi len dau
+    // for (let i = numbers3.length-1; i >= 0; i--) {
+    //     console.log(numbers3[i]);
+    // }
+    //in ra cac phan tu 1/2 mang sau
+    // for (let i = numbers3.length/2; i <numbers3.length ; i++) {
+    //     console.log(numbers3[i])
+    // }
+    //thêm: đầu => unshift,cuối =>push,bất kì =>splice
+    //xoá :đầu =>shift,cuối => pop, bất kì =>splice
+    let nums = [34,45,32,12,38];
+    //xoá phần tử đầu tiên
+    // nums.shift();
+    // alert(nums);
+    nums.push(40);
+    alert(nums);
+    // nums.splice(3,1); //xoa phan tu
+    // alert(nums);
+    // nums.splice(2,0,100);
+    // alert(nums);
+</script>
+</body>
+</html>
