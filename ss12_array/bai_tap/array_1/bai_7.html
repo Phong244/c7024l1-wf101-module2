@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = [3,15,6,12,26,6,19,25,9,18]
+    let soNguyen = parseInt(prompt('nhap mot so nguyen V: '));
+    let posIndex = -1;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i]===soNguyen){
+            posIndex = i;
+            break;
+        }
+    }
+    if (posIndex !== -1){
+        for (let j = posIndex; j < nums.length-1; j++) {
+            nums[j] = nums[j+1];
+        }
+        nums[nums.length-1] = 0;
+        document.write(`${soNguyen} da duoc xoa khoi mang. Mang hien tai la ${nums}`);
+    }else {
+        document.write(`${soNguyen} khong co trong mang tren`);
+    }
+</script>
+</body>
+</html>

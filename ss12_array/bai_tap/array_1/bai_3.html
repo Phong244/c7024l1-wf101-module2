@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = [3,15,6]
+    let max = nums[0];
+    let sum = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if(nums[i]>max){
+            max = nums[i];
+        }
+        sum += nums[i];
+    }
+    let avg = sum/nums.length;
+    document.write(`gia tri max la ${max}<br>`);
+    document.write(`gia tri trung binh cac phan tu trong mang la ${avg}`);
+</script>
+</body>
+</html>

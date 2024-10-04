@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nums = [3,15,6,12,26,6,19,25,9,18]
+    let max = nums[0];
+    let pos = 0;
+    for (let i = 0; i < 10; i++) {
+        if(nums[i]>max){
+            max = nums[i];
+            pos = i;
+        }
+    }
+    document.write(`phan tu lon nhat la ${max} <br>`);
+    document.write(`vi tri la ${pos}`);
+</script>
+</body>
+</html>
