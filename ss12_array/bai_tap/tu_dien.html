@@ -18,8 +18,8 @@
 
     function searchWord() {
         let word = document.getElementById('word').value.toLowerCase();
-        let index;
-
+        let index = -1;
+        console.log(index);
         // Tìm từ trong mảng tiếng Anh
         for (let i = 0; i < englishWords.length; i++) {
             if (englishWords[i] === word) {
