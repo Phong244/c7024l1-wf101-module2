@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Nhập vào mảng ký tự từ người dùng
+    let input = prompt("Nhập vào một chuỗi ký tự (có thể có ký tự '-'):");
+    let charArray = Array.from(input); // Chuyển chuỗi thành mảng ký tự
+
+    // Duyệt qua mảng và thay thế ký tự '-' bằng '_'
+    for (let i = 0; i < charArray.length; i++) {
+        if (charArray[i] === '-') {
+            charArray[i] = '_';
+        }
+    }
+
+    // Chuyển mảng ký tự trở lại thành chuỗi
+    let result = charArray.join(''); // Sử dụng join để kết hợp mảng thành chuỗi
+
+    // Hiển thị kết quả
+    document.write("Kết quả sau khi thay thế: " + result);
+</script>
+</body>
+</html>

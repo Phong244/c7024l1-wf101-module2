@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = ['h', 'e', 'l', 'l', 'o'];
+    let arr2 = ['h', 'e', 'l', 'l', 'o'];
+
+    // Biến kiểm tra xem hai mảng có giống nhau không
+    let areEqual = true;
+
+    // Kiểm tra nếu độ dài hai mảng khác nhau thì chúng không giống nhau
+    if (arr1.length !== arr2.length) {
+        areEqual = false;
+    } else {
+        // So sánh từng phần tử của hai mảng
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i]) {
+                areEqual = false;
+                break; // Thoát khỏi vòng lặp nếu tìm thấy phần tử khác nhau
+            }
+        }
+    }
+
+    if (areEqual) {
+        document.write("Hai mảng giống nhau");
+    } else {
+        document.write("Hai mảng không giống nhau");
+    }
+</script>
+</body>
+</html>
