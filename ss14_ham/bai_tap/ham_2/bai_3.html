@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function giaiThua(n){
+        if (n===0 || n===1){
+            return 1;
+        }
+        let result = 1;
+        for (let i = 2; i<=n  ; i++) {
+            result *= i;
+        }
+        return result;
+    }
+    let input;
+    do{
+        input = parseInt(prompt(`nhap vao so nguyen bat ki: `));
+    }while (input<0)
+    document.write(`giai thua cua ${input} bang ${giaiThua(input)}`);
+</script>
+</body>
+</html>

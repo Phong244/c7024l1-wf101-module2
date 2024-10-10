@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function calArea(radius){
+        return Math.PI * radius * radius;
+    }
+    function calCir(radius){
+        return 2*Math.PI*radius;
+    }
+    let inputRadius = parseFloat(prompt(`nhap ban kinh hinh tron: `));
+    let area = calArea(inputRadius);
+    let cir = calCir(inputRadius);
+    document.write(`dien tich hinh tron co ban kinh ${inputRadius} la ${area} <br>`);
+    document.write(`chu vi hinh tron co ban kinh ${inputRadius} la ${cir}`);
+</script>
+</body>
+</html>

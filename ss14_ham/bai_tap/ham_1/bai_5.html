@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let stars = ["Polaris","Aldebaran", "Deneb", "Vega", "Altair", "Dubhe","Regulus"]
+    let constellations = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+    function findCons(starName){
+        let index = stars.indexOf(starName);
+        if(index!==-1){
+            return constellations[index];
+        }
+    }
+    let input = prompt('nhap ten ngoi sao can tim: ');
+    let constellation = findCons(input);
+    if(constellation){
+        document.write(`chom sao cua ${input} la ${constellation}`);
+    }else {
+        document.write(`khong tim thay chom sao cua ngoi sao ${input}`);
+    }
+</script>
+</body>
+</html>

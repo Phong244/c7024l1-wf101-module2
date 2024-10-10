@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Hàm kiểm tra số nguyên tố
+    function isPrime(number) {
+        if (number < 2) {
+            return false; // Số nhỏ hơn 2 không phải số nguyên tố
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false; // Nếu chia hết cho i, không phải số nguyên tố
+            }
+        }
+        return true; // Là số nguyên tố
+    }
+    let num = parseInt(prompt('nhap so can kiem tra'))
+    if (isPrime(num)){
+        document.write(`${num} la so nguyen to`);
+    }else {
+        document.write(`${num} khong phai la so nguyen to`);
+    }
+</script>
+</body>
+</html>

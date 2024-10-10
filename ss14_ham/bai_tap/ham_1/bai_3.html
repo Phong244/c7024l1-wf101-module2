@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = Number(prompt('nhap so thu nhat: '));
+    let num2 = Number(prompt('nhap so thu hai: '));
+    function compareAndSum(a,b){
+        if (a>b){
+            alert('tham so thu nhat lon hon tham so thu hai');
+        }else {
+            let sum = a+b;
+            document.write(sum);
+            return sum;
+        }
+    }
+    let result = compareAndSum(num1,num2);
+
+</script>
+</body>
+</html>

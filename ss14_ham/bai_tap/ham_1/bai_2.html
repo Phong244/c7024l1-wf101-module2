@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="inputNumber">
+<button onclick="showResult()">Tăng thêm 1</button>
+
+<script>
+    function increaseNum(number){
+        return number +1;
+    }
+    function showResult(){
+        const input = document.getElementById(`inputNumber`).value;
+        const result = increaseNum(Number(input)); //Phải truyền vào Number(input)
+        document.write(`gia tri sau khi tang la ${result}`);
+    }
+</script>
+</body>
+</html>
