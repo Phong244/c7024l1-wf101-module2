@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function daoNguoc(arr){
+        for (let i = 0; i < (arr.length/2); i++) {
+            let temp = arr[i];
+            arr[i] = arr[arr.length-1-i];
+            arr[arr.length-1-i] = temp;
+        }
+    }
+    let array = [1,2,3,4,5,6];
+    daoNguoc(array);
+    alert(array);
+</script>
+</body>
+</html>

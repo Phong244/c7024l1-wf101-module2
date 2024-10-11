@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkChar(arr,char){
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]===char){
+                count++;
+            }
+        }
+        if(count>0){
+            return count;
+        }else {
+            return -1;
+        }
+    }
+    let array = ['a','b','c','a','e','a'];
+    let input = prompt('nhap ky tu can kiem tra');
+    let result = checkChar(array,input);
+    if(result!==-1){
+        alert(`ky tu ${input} xuat hien ${result} lan`);
+    }else {
+        alert(`ky tu ${input} khong co trong mang`);
+    }
+
+</script>
+</body>
+</html>

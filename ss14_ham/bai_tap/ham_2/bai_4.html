@@ -5,6 +5,16 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    function isNumber(char){
+        return !isNaN(char);
+    }
+    var input = prompt("nhap vao 1 ky tu: ");
+    if(isNumber(input)){
+        alert('day la so');
+    }else {
+        alert('day khong phai so');
+    }
+</script>
 </body>
 </html>
