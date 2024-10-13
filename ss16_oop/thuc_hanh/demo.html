@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // khởi tạo đối tượng trực tiếp
+    // let student1 = {
+    //     id : 1,
+    //     name : "chánh",
+    //     age : 40,
+    //     study: function (subject){
+    //         console.log(`${this.name} dang học môn ${subject}`)
+    //     }
+    // }
+    // console.log(student1.name);
+    // student1.name = "phong";
+    // console.log(student1.name)
+    // student1.study("Toán")
+
+    //có khuôn mẫu nào tạo ra dối tượng
+    //tạo lớp student bằng function
+    // let Student = function (id,name,age,){
+    //     this.id = id;
+    //     this.name = name;
+    //     this.age = age;
+    //     this.study = function (subject){
+    //         console.log(`${this.name} dang học môn ${subject}`)
+    //     }
+    // }
+    //
+    // //tạo 1 đối tượng sinh viên từ 1 lớp student
+    // let student2 = new Student(2,"chánh",30);
+    // student2.study("Văn")
+    // let student3 = new Student(3,"chánh3",34);
+    // student3.name = "Trần Văn Chánh";
+    // console.log(student3.name);
+
+    class SinhVien {
+        //hàm/method nhưng đặc biệt
+        //sử dụng để khởi tạo đối tượng
+        constructor(id,name,age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+        set Info
+        study(subject){
+            console.log(`${this.name} dang học môn ${subject}`)
+        }
+    }
+    let sv1 = new SinhVien(10,"Linh",20);
+    sv1.study("Hoá")
+</script>
+</body>
+</html>

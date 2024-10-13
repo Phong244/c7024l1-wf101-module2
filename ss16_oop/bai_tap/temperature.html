@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chuyển đổi nhiệt độ</h1>
+<p id="celsius"></p>
+<p id="fahrenheit"></p>
+<p id="kelvin"></p>
+<script>
+    class Temperature{
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        toFehrenheit(){
+            return (this.celsius*9/5)+32;
+        }
+        toKelvin(){
+            return this.celsius + 273.15;
+        }
+        setCelsius(celsius){
+            if (celsius<-273){
+                console.log('nhiet do khong the nho hon -273 do');
+            }else {
+                this.celsius = celsius;
+            }
+        }
+    }
+    let example = new Temperature(25);
+    document.getElementById('celsius').innerText = `nhiet do C la ${example.celsius}`;
+    document.getElementById('fahrenheit').innerText = `nhiet do F la ${example.toFehrenheit()}`;
+    document.getElementById('kelvin').innerText = `nhiet do K la ${example.toKelvin()}`;
+</script>
+</body>
+</html>

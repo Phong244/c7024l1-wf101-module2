@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Demo</title>
+</head>
+<body>
+<h1>Hình chữ nhật</h1>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+<p id="area"></p>
+<p id="perimeter"></p>
+
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length; // Chiều dài
+            this.width = width;   // Chiều rộng
+        }
+
+        // Phương thức tính diện tích
+        getArea() {
+            return this.length * this.width;
+        }
+
+        // Phương thức tính chu vi
+        getPerimeter() {
+            return 2 * (this.length + this.width);
+        }
+
+        // Phương thức vẽ hình chữ nhật lên canvas
+        drawRectangle() {
+            const canvas = document.getElementById('myCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Xóa canvas cũ
+            ctx.beginPath();
+            ctx.rect(50, 50, this.width, this.length); // Vẽ hình chữ nhật
+            ctx.stroke();
+        }
+    }
+    let rect = new Rectangle(100, 200);
+    rect.drawRectangle();
+    document.getElementById('area').innerText = "Diện tích: " + rect.getArea();
+    document.getElementById('perimeter').innerText = "Chu vi: " + rect.getPerimeter();
+</script>
+</body>
+</html>
