@@ -18,6 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 10px;
         }
         canvas {
             border: 1px solid black;
@@ -34,10 +35,18 @@
 <script>
     const canvas = document.getElementById('minesweeperCanvas');
     const ctx = canvas.getContext('2d');
-    let rows = 8;
-    let cols = 8;
-    const cellSize = 40;
+    const sizeWidth = window.innerWidth;
+    const sizeHeight = window.innerHeight;
+    const size = Math.min(sizeWidth,sizeHeight)-400;
+    canvas.width = size;
+    canvas.height = size;
+    const colNumber = 10;
+    let rows = colNumber;
+    let cols = colNumber;
+    const cellSize = size/colNumber;
     let mineCount = 10;
+    let gameOver = false;
+
 
     const board = [];  //mảng lưu thông tin từng ô(mìn xung quanh)
     let revealed = []; //mảng lưu ô đã mở hay chưa
@@ -45,6 +54,7 @@
 
     // tạo bảng
     function initBoard() {
+        gameOver = false;
         for (let i = 0; i < rows; i++) {
             board[i] = [];
             revealed[i] = [];
@@ -142,7 +152,6 @@
             alert('You win!');
         }
     }
-    let gameOver = false;
     canvas.addEventListener('click', (event) => {
         //theo code w3school
         const rect = canvas.getBoundingClientRect();
