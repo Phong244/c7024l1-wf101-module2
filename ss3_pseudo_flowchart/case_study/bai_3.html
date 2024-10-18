@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangSo = []
+    let soPhanTu;
+    soPhanTu = parseInt(prompt('nhap so phan tu muon nhap vao mang'));
+    for (let i = 0; i < soPhanTu; i++) {
+        let element = parseInt(prompt('nhap so'));
+        mangSo.push(element);
+    }
+    alert(`mang so sau khi them phan tu la ${mangSo}`);
+    function kiemTraDoiXung(arr){
+        for (let i = 0; i < arr.length/2; i++) {
+            if (arr[i] !== arr[arr.length-1-i]){
+                return false;
+            }
+        }
+        return true;
+    }
+    if (kiemTraDoiXung(mangSo)){
+        console.log('ok');
+    }else {
+        console.log('no')
+    }
+</script>
+</body>
+</html>

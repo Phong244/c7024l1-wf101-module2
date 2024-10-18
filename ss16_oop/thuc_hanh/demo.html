@@ -38,21 +38,27 @@
     // student3.name = "Trần Văn Chánh";
     // console.log(student3.name);
 
-    class SinhVien {
-        //hàm/method nhưng đặc biệt
-        //sử dụng để khởi tạo đối tượng
-        constructor(id,name,age) {
-            this.id = id;
-            this.name = name;
-            this.age = age;
-        }
-        set Info
-        study(subject){
-            console.log(`${this.name} dang học môn ${subject}`)
-        }
-    }
-    let sv1 = new SinhVien(10,"Linh",20);
-    sv1.study("Hoá")
+    // class SinhVien {
+    //     //hàm/method nhưng đặc biệt
+    //     //sử dụng để khởi tạo đối tượng
+    //     constructor(id,name,age) {
+    //         this.id = id;
+    //         this.name = name;
+    //         this.age = age;
+    //     }
+    //     set Info
+    //     study(subject){
+    //         console.log(`${this.name} dang học môn ${subject}`)
+    //     }
+    // }
+    // let sv1 = new SinhVien(10,"Linh",20);
+    // sv1.study("Hoá")
+    // Thêm một phần tử mới vào DOM
+    let newDiv = document.createElement("div");
+    console.log(newDiv)
+    newDiv.textContent = "Đây là phần tử mới";
+    document.body.appendChild(newDiv);
+
 </script>
 </body>
 </html>
