@@ -5,6 +5,38 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    let phanSo = prompt('nhap vao 1 phan so dang a/b: ');
+    // console.log(typeof phanSo)
+    // console.log(phanSo)
+    function kiemTra(phanSo) {
+        let regex = /^\d+\/[1-9]+$/
+        if (!regex.test(phanSo)){
+            console.log('phan so khong hop le');
+            return;
+        }
+        let [tuSo, mauSo] = phanSo.split('/').map(Number);
 
+        function uocChungLonNhat(a, b) {
+            if (b===0){
+                return a;
+            }else {
+                return uocChungLonNhat(b,a%b);
+            }
+        }
+
+        let ucln = uocChungLonNhat(tuSo, mauSo);
+
+        // toi gian
+        tuSo /= ucln;
+        mauSo /= ucln;
+
+        return `${tuSo}/${mauSo}`;
+    }
+
+    console.log(kiemTra(phanSo));
+
+</script>
 </body>
 </html>
+
