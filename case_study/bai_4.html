@@ -6,17 +6,21 @@
 </head>
 <body>
 <script>
-    let phanSo = prompt('nhap vao 1 phan so dang a/b: ');
-    // console.log(typeof phanSo)
-    // console.log(phanSo)
+    // let phanSo = prompt('nhap vao 1 phan so dang a/b: ');
+    let phanSo = prompt('nhap vao phan so');
     function kiemTra(phanSo) {
-        let regex = /^\d+\/[1-9]+$/
-        if (!regex.test(phanSo)) {
+        // let regex = /^\d+\/[1-9]+$/
+        // if (!regex.test(phanSo)) {
+        //     console.log('phan so khong hop le');
+        //     return;
+        // }
+        // let [tuSo, mauSo] = phanSo.split('/').map(Number);
+
+        let [tuSo, mauSo] = phanSo.split('/').map(Number);
+        if (mauSo===0){
             console.log('phan so khong hop le');
             return;
         }
-        let [tuSo, mauSo] = phanSo.split('/').map(Number);
-
         function uocChungLonNhat(a, b) {
             if (b === 0) {
                 return a;
