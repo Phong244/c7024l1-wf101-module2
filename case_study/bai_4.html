@@ -17,7 +17,7 @@
         // let [tuSo, mauSo] = phanSo.split('/').map(Number);
 
         let [tuSo, mauSo] = phanSo.split('/').map(Number);
-        if (mauSo===0){
+        if (mauSo===0 || mauSo===undefined){
             console.log('phan so khong hop le');
             return;
         }
