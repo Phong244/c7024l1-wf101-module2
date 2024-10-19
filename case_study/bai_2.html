@@ -6,24 +6,24 @@
 </head>
 <body>
 <script>
-    let x = parseInt(prompt('nhap canh thu nhat cua tam giac'))
-    let y = parseInt(prompt('nhap canh thu hai cua tam giac'))
-    let z = parseInt(prompt('nhap canh thu ba cua tam giac'))
+    let x = parseInt(prompt('nhap canh thu nhat cua tam giac'));
+    let y = parseInt(prompt('nhap canh thu hai cua tam giac'));
+    let z = parseInt(prompt('nhap canh thu ba cua tam giac'));
 
     function checkTriangle(x, y, z) {
         let x2 = x * x;
         let y2 = y * y;
         let z2 = z * z;
         if (x + y <= z || x + z <= y || y + z <= x) {
-            console.log('khong phai la canh cua tam giac')
-        }else if (x2 + y2 == z2 || x2 + z2 == y2 || y2 + z2 == x2) {
-            console.log('la 3 canh cua tam giac vuong')
-        }else{
-            console.log('la 3 canh cua mot tam giac')
+            console.log('khong phai la canh cua tam giac');
+        } else if (x2 + y2 === z2 || x2 + z2 === y2 || y2 + z2 === x2) {
+            console.log('la 3 canh cua tam giac vuong');
+        } else {
+            console.log('la 3 canh cua mot tam giac');
         }
     }
 
-    checkTriangle(x, y, z)
+    checkTriangle(x, y, z);
 </script>
 </body>
 </html>

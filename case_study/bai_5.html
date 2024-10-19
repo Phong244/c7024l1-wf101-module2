@@ -7,14 +7,15 @@
 <body>
 <script>
     let num = +prompt('nhap vao 1 so bat ki: ');
-    function kiemTraSo(){
-        if (num<1000 || num>9999){
+
+    function kiemTraSo() {
+        if (num < 1000 || num > 9999) {
             return -1;
         }
         let numStr = num.toString();
         let arrNum = [];
         for (let i = 0; i < 4; i++) {
-            let newNum = parseInt(numStr.slice(0,i) + numStr.slice(i+1));
+            let newNum = parseInt(numStr.slice(0, i) + numStr.slice(i + 1));
 
             arrNum.push(newNum);
         }
@@ -22,6 +23,7 @@
         console.log(maxNum);
         return maxNum;
     }
+
     kiemTraSo();
 </script>
 </body>

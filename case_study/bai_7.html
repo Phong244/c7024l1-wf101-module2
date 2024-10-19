@@ -9,26 +9,23 @@
     let mang = [];
     let soPhanTu = parseInt(prompt('nhap so phan tu muon nhap vao mang'));
     for (let i = 0; i < soPhanTu; i++) {
-        let element = parseInt(prompt('nhap so nguyen'));
+        let element = parseInt(prompt('nhap ky tu, so'));
         mang.push(element);
     }
 
     function kiemTraMang(mang) {
-        if (mang.length === 0) {
-            return -1;
-        }
-        let soChan = 0;
-        let soLe = 0;
+        let chuaSo = false;
+        let chuaChu = false;
         for (let i = 0; i < mang.length; i++) {
-            if (mang[i] % 2 === 0) {
-                soChan++;
+            if (isNaN(mang[i])) {
+                chuaChu = true;
             } else {
-                soLe++;
+                chuaSo = true;
             }
         }
-        if (soChan === mang.length) {
+        if (chuaSo && !chuaChu) {
             return 1;
-        } else if (soLe === mang.length) {
+        } else if (chuaChu && !chuaSo) {
             return 0;
         } else {
             return -1;

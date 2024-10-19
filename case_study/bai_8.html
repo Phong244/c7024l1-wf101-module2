@@ -6,28 +6,29 @@
 </head>
 <body>
 <script>
-    let mangSo = [];
+    let mang = [];
     let soPhanTu = parseInt(prompt('nhap so phan tu muon nhap vao mang'));
     for (let i = 0; i < soPhanTu; i++) {
         let element = parseInt(prompt('nhap so'));
-        mangSo.push(element);
+        mang.push(element);
     }
-    alert(`mang so sau khi them phan tu la ${mangSo}`);
 
-    function kiemTraDoiXung(arr) {
-        for (let i = 0; i < arr.length / 2; i++) {
-            if (arr[i] !== arr[arr.length - 1 - i]) {
+    function kiemTraSNT(mang) {
+        for (let j = 0; j < mang.length; j++) {
+            if (mang[j] < 2) {
                 return false;
+            }
+            for (let k = 2; k <= Math.sqrt(mang[j]); k++) {
+                if (mang[j] % k === 0) {
+                    return false;
+                }
             }
         }
         return true;
+
     }
 
-    if (kiemTraDoiXung(mangSo)) {
-        console.log('ok');
-    } else {
-        console.log('no');
-    }
+    console.log(kiemTraSNT(mang));
 </script>
 </body>
 </html>

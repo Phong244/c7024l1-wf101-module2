@@ -11,17 +11,17 @@
     // console.log(phanSo)
     function kiemTra(phanSo) {
         let regex = /^\d+\/[1-9]+$/
-        if (!regex.test(phanSo)){
+        if (!regex.test(phanSo)) {
             console.log('phan so khong hop le');
             return;
         }
         let [tuSo, mauSo] = phanSo.split('/').map(Number);
 
         function uocChungLonNhat(a, b) {
-            if (b===0){
+            if (b === 0) {
                 return a;
-            }else {
-                return uocChungLonNhat(b,a%b);
+            } else {
+                return uocChungLonNhat(b, a % b);
             }
         }
 
