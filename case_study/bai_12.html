@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bài 12 - Quản lý học viên</h1>
+<button onclick="addNewStudent()">Thêm mới học viên</button>
+<button onclick="editStudent()">Sửa thông tin học viên</button>
+<button onclick="deleteStudent()">Xoá học viên</button><br>
+<div id="result"></div>
+<script>
+    class SinhVien {
+        constructor(id, name, classRoom, email, dob, module) {
+            this.id = id;
+            this.name = name;
+            this.classRoom = classRoom;
+            this.email = email;
+            this.dob = dob;
+            this.module = module;
+        }
+        getID(){
+            return `HV-${this.id.toString().padStart(4, '0')}`;
+        }
+
+    }
+    let sv1 = new SinhVien(1,"Nguyễn Văn A","C1022G1","nguyenvana@gmail.com","01/01/2004","1");
+    let sv2 = new SinhVien(2,"Nguyễn Văn B","C1122G1","nguyenvanb@gmail.com","02/02/2004","3");
+    let sv3 = new SinhVien(3,"Nguyễn Thi C","C1222G1","nguyenthic@gmail.com","03/03/2004","2");
+    let sinhVienList = [sv1, sv2, sv3];
+    display();
+
+    function display() {
+        let tableString = `<table class="table table-dark" border="1" style="border-collapse:  collapse">
+                            <tr>
+                                <th>Mã học viên</th>
+                                <th>Tên</th>
+                                <th>Lớp</th>
+                                <th>Email</th>
+                                <th>Ngày sinh</th>
+                                <th>Module</th>
+                            </tr>`;
+        for (let i = 0; i < sinhVienList.length; i++) {
+            tableString += `<tr>
+                                <td>${sinhVienList[i].getID()}</td>
+                                <td>${sinhVienList[i].name}</td>
+                                <td>${sinhVienList[i].classRoom}</td>
+                                <td>${sinhVienList[i].email}</td>
+                                <td>${sinhVienList[i].dob}</td>
+                                <td>${sinhVienList[i].module}</td>
+                            </tr>`;
+        }
+        tableString += `</table>`;
+        document.getElementById("result").innerHTML = tableString;
+    }
+    function addNewStudent() {
+        let id = parseInt(prompt("Nhập mã học viên: "));
+        for (let i = 0; i < sinhVienList.length; i++) {
+            if (sinhVienList[i].id === id) {
+                alert("Mã học viên đã tồn tại");
+                return;
+            }
+        }
+        let name = '';
+        do{
+            name = prompt("Nhập tên: ");
+        }while (name.split('').length > 50);
+        let classRoom = prompt("Nhập lớp: ");
+        let email = prompt("Nhập email: ");
+        let dob = prompt("Nhập ngày sinh dạng dd/mm/yyyy: ");
+        let regex = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!regex.test(dob)) {
+            alert("Ngày sinh không hợp lệ");
+            return;
+        }
+        let module = 0;
+        do {
+            module = prompt("Nhập module: ");
+        }while (module < 1 || module > 6);
+        let sv = new SinhVien(id, name, classRoom, email, dob, module);
+        sinhVienList.push(sv);
+        display();
+    }
+    function editStudent(){
+        let id = parseInt(prompt("Nhập mã học viên cần sửa: "));
+        let index = -1;
+        for (let i = 0; i < sinhVienList.length; i++) {
+            if (sinhVienList[i].id === id) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            alert("Mã học viên không tồn tại");
+            return;
+        }
+        let name = '';
+        do{
+            name = prompt("Nhập tên: ");
+        }while (name.split('').length > 50);
+        let classRoom = prompt("Nhập lớp: ");
+        let email = prompt("Nhập email: ");
+        let dob = prompt("Nhập ngày sinh dạng dd/mm/yyyy: ");
+        let regex = /^\d{2}\/\d{2}\/\d{4}$/;
+        if (!regex.test(dob)) {
+            alert("Ngày sinh không hợp lệ");
+            return;
+        }
+        let module = 0;
+        do {
+            module = prompt("Nhập module: ");
+        }while (module < 1 || module > 6);
+        sinhVienList[index].name = name;
+        sinhVienList[index].classRoom = classRoom;
+        sinhVienList[index].email = email;
+        sinhVienList[index].dob = dob;
+        sinhVienList[index].module = module;
+        display();
+    }
+    function deleteStudent(){
+        let id = parseInt(prompt("Nhập mã học viên cần xoá: "));
+        let index = -1;
+        for (let i = 0; i < sinhVienList.length; i++) {
+            if (sinhVienList[i].id === id) {
+                index = i;
+                break;
+            }
+        }
+        if (index === -1) {
+            alert("Mã học viên không tồn tại");
+            return;
+        }
+        let check = confirm('bạn có muốn xoá học viên này thật không');
+        if(check){
+            sinhVienList.splice(index, 1);
+            display();
+        }
+    }
+
+</script>
+</body>
+</html>

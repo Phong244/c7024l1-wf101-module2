@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('nhap vao mot chuoi: ');
+    let arr = str.toLowerCase().split("");
+    let mangNguyenAm = ['u', 'e', 'o', 'a', 'i'];
+    let arrOutput = [];
+    function checkNguyenAm() {
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < mangNguyenAm.length; j++) {
+                if (arr[i] === mangNguyenAm[j]) {
+                    if (!arrOutput.includes(arr[i])){
+                        arrOutput.push(arr[i]);
+                    }
+                }
+            }
+        }
+        return arrOutput;
+    }
+
+    console.log(checkNguyenAm());
+</script>
+</body>
+</html>

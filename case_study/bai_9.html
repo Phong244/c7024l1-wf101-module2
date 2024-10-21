@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p onclick="kiemTraMang()"> </p>
+<script>
+    let soPhanTu;
+    let mangSo = [];
+    do {
+        soPhanTu = parseInt(prompt('nhap so phan tu muon nhap vao mang'));
+    } while (soPhanTu % 2 !== 0);
+    for (let i = 0; i < soPhanTu; i++) {
+        let element = parseInt(prompt('nhap so'));
+        mangSo.push(element);
+    }
+    console.log(mangSo);
+    let checkNum = false
+    function kiemTraMang() {
+        for (let j = 0; j < mangSo.length; j += 2) {
+            if (mangSo[j] < mangSo[j + 1]) {
+                checkNum = true;
+            } else {
+                checkNum = false;
+                break;
+            }
+        }
+        return checkNum;
+    }
+    kiemTraMang();
+    if (checkNum) {
+        console.log('ok')
+    } else {
+        console.log('no')
+    }
+</script>
+</body>
+</html>
