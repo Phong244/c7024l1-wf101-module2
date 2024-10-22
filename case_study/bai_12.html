@@ -8,7 +8,8 @@
 <h1>Bài 12 - Quản lý học viên</h1>
 <button onclick="addNewStudent()">Thêm mới học viên</button>
 <button onclick="editStudent()">Sửa thông tin học viên</button>
-<button onclick="deleteStudent()">Xoá học viên</button><br>
+<button onclick="deleteStudent()">Xoá học viên</button>
+<br>
 <div id="result"></div>
 <script>
     class SinhVien {
@@ -20,14 +21,15 @@
             this.dob = dob;
             this.module = module;
         }
-        getID(){
+        getID() {
             return `HV-${this.id.toString().padStart(4, '0')}`;
         }
 
     }
-    let sv1 = new SinhVien(1,"Nguyễn Văn A","C1022G1","nguyenvana@gmail.com","01/01/2004","1");
-    let sv2 = new SinhVien(2,"Nguyễn Văn B","C1122G1","nguyenvanb@gmail.com","02/02/2004","3");
-    let sv3 = new SinhVien(3,"Nguyễn Thi C","C1222G1","nguyenthic@gmail.com","03/03/2004","2");
+
+    let sv1 = new SinhVien(1, "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "01/01/2004", "1");
+    let sv2 = new SinhVien(2, "Nguyễn Văn B", "C1122G1", "nguyenvanb@gmail.com", "02/02/2004", "3");
+    let sv3 = new SinhVien(3, "Nguyễn Thi C", "C1222G1", "nguyenthic@gmail.com", "03/03/2004", "2");
     let sinhVienList = [sv1, sv2, sv3];
     display();
 
@@ -54,6 +56,7 @@
         tableString += `</table>`;
         document.getElementById("result").innerHTML = tableString;
     }
+
     function addNewStudent() {
         let id = parseInt(prompt("Nhập mã học viên: "));
         for (let i = 0; i < sinhVienList.length; i++) {
@@ -63,9 +66,9 @@
             }
         }
         let name = '';
-        do{
+        do {
             name = prompt("Nhập tên: ");
-        }while (name.split('').length > 50);
+        } while (name.split('').length > 50);
         let classRoom = prompt("Nhập lớp: ");
         let email = prompt("Nhập email: ");
         let dob = prompt("Nhập ngày sinh dạng dd/mm/yyyy: ");
@@ -77,12 +80,13 @@
         let module = 0;
         do {
             module = prompt("Nhập module: ");
-        }while (module < 1 || module > 6);
+        } while (module < 1 || module > 6);
         let sv = new SinhVien(id, name, classRoom, email, dob, module);
         sinhVienList.push(sv);
         display();
     }
-    function editStudent(){
+
+    function editStudent() {
         let id = parseInt(prompt("Nhập mã học viên cần sửa: "));
         let index = -1;
         for (let i = 0; i < sinhVienList.length; i++) {
@@ -96,9 +100,9 @@
             return;
         }
         let name = '';
-        do{
+        do {
             name = prompt("Nhập tên: ");
-        }while (name.split('').length > 50);
+        } while (name.split('').length > 50);
         let classRoom = prompt("Nhập lớp: ");
         let email = prompt("Nhập email: ");
         let dob = prompt("Nhập ngày sinh dạng dd/mm/yyyy: ");
@@ -110,7 +114,7 @@
         let module = 0;
         do {
             module = prompt("Nhập module: ");
-        }while (module < 1 || module > 6);
+        } while (module < 1 || module > 6);
         sinhVienList[index].name = name;
         sinhVienList[index].classRoom = classRoom;
         sinhVienList[index].email = email;
@@ -118,7 +122,8 @@
         sinhVienList[index].module = module;
         display();
     }
-    function deleteStudent(){
+
+    function deleteStudent() {
         let id = parseInt(prompt("Nhập mã học viên cần xoá: "));
         let index = -1;
         for (let i = 0; i < sinhVienList.length; i++) {
@@ -132,12 +137,11 @@
             return;
         }
         let check = confirm('bạn có muốn xoá học viên này thật không');
-        if(check){
+        if (check) {
             sinhVienList.splice(index, 1);
             display();
         }
     }
-
 </script>
 </body>
 </html>
