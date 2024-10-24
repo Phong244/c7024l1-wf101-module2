@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangSo = [1,5,6,13,9,12,8,0,5,1]
+    let mangFib = [];
+    function mangSoFib(n){
+        let soThuNhat = 0, soThuHai = 1, soTiepTheo;
+        mangFib.push(soThuNhat);
+        if (n>1){
+            mangFib.push(soThuHai);
+        }
+        for (let i = 3;i<=n;i++){
+            soTiepTheo = soThuNhat + soThuHai;
+            mangFib.push(soTiepTheo);
+            soThuNhat = soThuHai;
+            soThuHai = soTiepTheo
+        }
+        return mangFib;
+    }
+    function kiemTraMang(){
+        let mangChuaFib = [];
+        for (let i = 0; i < mangSo.length; i++) {
+            for (let j = 0; j < mangFib.length; j++) {
+                if (mangSo[i] === mangFib[j]) {
+                    mangChuaFib.push(mangSo[i]);
+                    break;
+                }
+            }
+        }
+        // console.log(typeof mangChuaFib);
+        mangChuaFib = mangChuaFib.sort((a, b) => a - b);
+        alert(`các số fibonaci trong mảng là ${mangChuaFib}`);
+        return mangChuaFib;
+    }
+    mangSoFib(20);
+    kiemTraMang(mangSo);
+</script>
+</body>
+</html>

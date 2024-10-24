@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt('nhap chuoi ky tu: ');
+    let mangKiemTra = str.split('');
+    function countChar(mang) {
+        let countUpper = 0;
+        let countLower = 0;
+        for (let i = 0; i < mang.length; i++) {
+            if(mang[i]===" " ||!isNaN(mang[i])||){
+                continue;
+            }else if (mang[i] === mang[i].toUpperCase()) {
+                    countUpper++;
+                } else {
+                    countLower++;
+                }
+        }
+        if (countUpper===0 && countLower===0){
+            mangKiemTra = [0,0];
+            alert(mangKiemTra);
+            return;
+        }else {
+            mangKiemTra = [countUpper, countLower];
+        }
+        alert(`mảng trả về là ${mangKiemTra}`);
+    }
+    countChar(mangKiemTra);
+</script>
+</body>
+</html>

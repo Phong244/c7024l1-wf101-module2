@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangSo = [];
+    let soPhanTu;
+    do {
+        soPhanTu = parseInt(prompt('nhap so phan tu muon nhap vao mang'));
+    } while (soPhanTu > 50);
+    for (let i = 0; i < soPhanTu; i++) {
+        let element = parseInt(prompt('nhap so'));
+        mangSo.push(element)
+    }
+    let result = 0;
+    alert(`mang so sau khi them phan tu la ${mangSo}`);
+    for (let i = 0; i < mangSo.length; i++) {
+        if(i % 2 === 0){
+            result += mangSo[i];
+        }else {
+            result -= mangSo[i];
+        }
+    }
+    alert(`ket qua la ${result}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>list máy tính</p>
+<button onclick="addNewComputer()">Thêm máy tính mới</button>
+<div id="listComputer"></div><br>
+<p>list máy tính sau khi sắp xếp theo giá bán</p>
+<div id="sortComputer"></div>
+<script>
+    class MayTinh {
+        constructor(maMay, tenMay, hangSanXuat, giaBan) {
+            this.maMay = maMay;
+            this.tenMay = tenMay;
+            this.hangSanXuat = hangSanXuat;
+            this.giaBan = giaBan;
+        }
+        setMaMay(maMay){
+            this.maMay = maMay;
+        }
+        setTenMay(tenMay){
+            this.tenMay = tenMay;
+        }
+        setHangSanXuat(hangSanXuat){
+            this.hangSanXuat = hangSanXuat;
+        }
+        setGiaBan(giaBan){
+            this.giaBan = giaBan;
+        }
+        getMaMay(){
+            return this.maMay;
+        }
+        getTenMay(){
+            return this.tenMay;
+        }
+        getHangSanXuat(){
+            return this.hangSanXuat;
+        }
+        getGiaBan(){
+            return this.giaBan;
+        }
+    }
+    let mayTinh1 = new MayTinh('a', 'b', 'c', 1);
+    let mayTinh2 = new MayTinh('a', 'b', 'c', 3);
+    let mayTinh3 = new MayTinh('a', 'b', 'c', 2);
+    let maytinhList = [mayTinh1, mayTinh2, mayTinh3];
+    function display(result) {
+        let tableString = `<table class="table table-dark" border="1" style="border-collapse:  collapse">
+                            <tr>
+                                <th>Mã máy</th>
+                                <th>Tên máy</th>
+                                <th>Hãng sản xuất</th>
+                                <th>Giá bán</th>
+                            </tr>`;
+        for (let i = 0; i < maytinhList.length; i++) {
+            tableString += `<tr>
+                                <td>${maytinhList[i].getMaMay()}</td>
+                                <td>${maytinhList[i].getTenMay()}</td>
+                                <td>${maytinhList[i].getHangSanXuat()}</td>
+                                <td>${maytinhList[i].getGiaBan()}</td>
+                            </tr>`;
+        }
+        tableString += `</table>`;
+        document.getElementById(result).innerHTML = tableString;
+    }
+    function addNewComputer() {
+        let maMay = prompt("Nhập mã máy: ");
+        let tenMay = prompt("Nhập tên máy: ");
+        let hangSanXuat = prompt("Nhập hãng sản xuất: ");
+        let giaBan;
+        do{
+            giaBan = parseInt(prompt("Nhập giá bán: "));
+        }while(isNaN(giaBan) || giaBan < 0);
+        let mayTinhMoi = new MayTinh(maMay, tenMay, hangSanXuat, giaBan);
+        maytinhList.push(mayTinhMoi);
+        display('listComputer');
+    }
+    function sapXepGiaBan(){
+        //sap xep theo gia ban tang dan
+        maytinhList.sort((a, b) => a.getGiaBan() - b.getGiaBan());
+        display('sortComputer');
+    }
+    display('listComputer');
+    sapXepGiaBan();
+</script>
+</body>
+</html>
