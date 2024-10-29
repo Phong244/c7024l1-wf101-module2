@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mangSo =[];
+    let soPhanTu;
+    let k = 0;
+    do {
+        soPhanTu = parseInt(prompt('nhập số phần tử muốn nhập vào mảng'));
+    } while (soPhanTu<0 || soPhanTu > 50);
+    for (let i = 0; i < soPhanTu; i++) {
+        let element = parseInt(prompt('nhập số'));
+        mangSo.push(element)
+    }
+    do {
+        k = parseInt(prompt('nhập số nguyên dương k'));
+    } while (k<=0);
+    function hienThiCapSo(){
+        let dem = 0;
+        let mangCapSo = [];
+        for (let i = 0; i < mangSo.length; i++) {
+            for (let j = i+1; j < mangSo.length; j++) {
+                if((mangSo[i] + mangSo[j]) % k === 0){
+                    dem++;
+                    mangCapSo.push(`(${mangSo[i]}, ${mangSo[j]})`);
+                }
+            }
+        }
+        alert(`có ${dem} cặp số thoả mãn là ${mangCapSo}`);
+    }
+    hienThiCapSo();
+</script>
+</body>
+</html>
