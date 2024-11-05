@@ -11,18 +11,20 @@
     do {
         diem = parseInt(prompt('nhập điểm của học sinh'));
     } while (diem < 0 || diem > 100);
+
     function lamTronDiem(diem) {
         if (diem < 48) {
             alert(`điểm của học sinh là ${diem} và  trượt`);
         } else {
             let boiSo = Math.ceil(diem / 5);
-            if(boiSo*5 - diem >= 3){
+            if (boiSo * 5 - diem >= 3) {
                 return alert(`điểm của học sinh là ${diem} và đậu`);
-            }else{
-                return alert(`điểm của học sinh là ${boiSo*5} và đậu`);
+            } else {
+                return alert(`điểm của học sinh là ${boiSo * 5} và đậu`);
             }
         }
     }
+
     lamTronDiem(diem);
 </script>
 </body>

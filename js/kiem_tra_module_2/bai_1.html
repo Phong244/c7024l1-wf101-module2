@@ -6,25 +6,27 @@
 </head>
 <body>
 <script>
-    let mangSo =[];
+    let mangSo = [];
     let soPhanTu;
     do {
         soPhanTu = parseInt(prompt('nhập số phần tử muốn nhập vào mảng'));
-    } while (soPhanTu<0 || soPhanTu > 20);
+    } while (soPhanTu < 0 || soPhanTu > 20);
     for (let i = 0; i < soPhanTu; i++) {
         let element = parseInt(prompt('nhap so'));
         mangSo.push(element)
     }
     alert(`mảng số sau khi thêm phần tử là ${mangSo}`);
-    function timBoiChung(){
+
+    function timBoiChung() {
         let tong = 0;
         for (let i = 0; i < mangSo.length; i++) {
-            if(mangSo[i] % 3 === 0 && mangSo[i] % 5 === 0){
+            if (mangSo[i] % 3 === 0 && mangSo[i] % 5 === 0) {
                 tong += mangSo[i];
             }
         }
         alert(`tổng các số là bội chung của 3 va 5 là ${tong}`);
     }
+
     timBoiChung();
 </script>
 </body>
