@@ -19,7 +19,6 @@ const ListStudent = () => {
         setIsLoading((prevState) => !prevState)
     }
 
-
     return (
         <>
             <AddStudent handleIsLoading={handleIsLoading}/>
