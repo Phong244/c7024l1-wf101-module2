@@ -31,4 +31,4 @@ function AddStudent({handleIsLoading}) {
     );
 }
 
-export default AddStudent;
+export default React.memo(AddStudent);

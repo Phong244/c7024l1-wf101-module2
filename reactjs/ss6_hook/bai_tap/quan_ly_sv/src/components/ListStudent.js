@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {getAllStudent, searchByName} from "../service/studentService";
 import AddStudent from "./AddStudent";
 import DeleteStudent from "./DeleteStudent";
@@ -19,9 +19,15 @@ const ListStudent = () => {
         ));
     }, [isLoading]);
 
-    const handleIsLoading = () => {
-        setIsLoading((prevState) => !prevState)
-    }
+    // const handleIsLoading = () => {
+    //     setIsLoading((prevState) => !prevState)
+    // }
+
+    const handleIsLoading = useCallback(() => {
+            setIsLoading((prevState) => !prevState)
+        }, [],
+    );
+
 
     const handleSearch = () => {
         const searchName = searchNameRef.current.value;
@@ -39,9 +45,15 @@ const ListStudent = () => {
         }))
         setIsShowModal(prevState => !prevState);
     }
-    const handleCloseModal = () => {
-        setIsShowModal(prevState => !prevState);
-    }
+
+    // const handleCloseModal = () => {
+    //     setIsShowModal(prevState => !prevState);
+    // }
+
+    const handleCloseModal = useCallback(() => {
+            setIsShowModal(prevState => !prevState);
+        }, [],
+    );
 
     return (
         <>
