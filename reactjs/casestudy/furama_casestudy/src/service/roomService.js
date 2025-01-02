@@ -1,9 +1,15 @@
 import axios from "axios";
+
 let url = "http://localhost:8080/rooms";
+
+const defaultParams = {
+    _sort: "name",
+    _order: "asc"
+};
 
 export async function getAllRoom() {
     try{
-        const response = await axios.get(`${url}?_sort=name&_order=asc`);
+        const response = await axios.get(url, { params: defaultParams });
         return response.data;
     }catch (e) {
         return []
@@ -11,14 +17,22 @@ export async function getAllRoom() {
 
 }
 
-export async function searchRoom(searchName,searchType) {
+export async function searchRoom(searchName, searchType, page = 1, limit = 10) {
+    const params = {
+        ...defaultParams,
+        name_like: searchName,
+        _page: page,
+        _per_page: limit,
+    };
 
-    let url1 =`${url}?name_like=${searchName}&type.id=${searchType}&_sort=name&_order=asc`
-    if (searchType==""){
-        url1 =`${url}?name_like=${searchName}&_sort=name&_order=asc`
+    if (searchType) {
+        params['type.id'] = searchType
     }
+
     try {
-        const  response = await axios.get(url1);
+        const response = await axios.get(url, {
+            params: params
+        });
         return response.data;
     }catch (e) {
         return [];
@@ -28,16 +42,15 @@ export async function searchRoom(searchName,searchType) {
 export async function addNewRoom(room) {
 
     try {
-        const  response = await axios.post(url,room);
+        return axios.post(url, room);
     }catch (e) {
         console.log("lỗi "+e);
     }
-
 }
 
 export async function deleteRoomById(id) {
     try {
-        const  response = await axios.delete(`${url}/${id}`);
+        return axios.delete(`${url}/${id}`);
     }catch (e) {
         console.log("lỗi "+e);
     }

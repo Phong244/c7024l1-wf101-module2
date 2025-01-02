@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min";
 import { deleteRoomById, searchRoom } from "../service/roomService";
@@ -13,30 +13,55 @@ function ListFacilities() {
     const [typeList, setTypeList] = useState([]);
     const searchNameRef = useRef();
     const searchTypeRef = useRef();
-    const [isSearch, setIsSearch] = useState(false);
     const [selectedRoom, setSelectedRoom] = useState(null);
     const [deleteRoom, setDeleteRoom] = useState(null);
     const [show, setShow] = useState(false);
-    const [visibleRooms, setVisibleRooms] = useState(6);
+    const [page, setPage] = useState(1);
+    const limit = 10;
+    const [hasLoadMore, setHasLoadMore] = useState(true);
 
-    useEffect(() => {
-        const fetchData = async () => {
+    const fetchRooms = useCallback(
+        async () => {
             let name = searchNameRef.current.value;
             let type = searchTypeRef.current.value;
-            const data = await searchRoom(name, type);
-            setRoomList(data);
-        }
-        const fetchType = async () => {
-            setTypeList(await getAllType());
-        }
-        fetchData();
-        fetchType();
-    }, [isSearch]);
+            const data = await searchRoom(name, type, page);
+            if (page === 1) {
+                setRoomList(data);
+            } else {
+                setRoomList(prev => [...prev, ...data]);
+            }
 
-    const handleSearch = async () => {
-        setIsSearch((prevState) => !prevState);
-        setVisibleRooms(6);
-    }
+            if (data.length < limit) {
+                setHasLoadMore(false);
+            } else {
+                setHasLoadMore(true);
+            }
+        },
+        [page],
+    );
+
+    const fetchType = useCallback(() => {
+        getAllType().then((data) => setTypeList(data));
+    }, [])
+
+    useEffect(() => {
+        fetchType();
+    }, [fetchType])
+
+    useEffect(() => {
+        fetchRooms();
+    }, [fetchRooms, page]);
+
+    const handleSearch = useCallback(() => {
+        if  (page === 1) {
+            console.log('vo 1');
+            setPage(1);
+            fetchRooms();
+        } else {
+            console.log('vo 2');
+            setPage(1);
+        }
+    }, [page, fetchRooms])
 
     const handleRoomClick = (room) => {
         setSelectedRoom(room);
@@ -48,7 +73,6 @@ function ListFacilities() {
 
     const handleDelete = async () => {
         await deleteRoomById(deleteRoom.id);
-        setIsSearch((prevState) => !prevState);
         setDeleteRoom(null);
         handleCloseModalDelete();
         handleCloseModal();
@@ -64,9 +88,9 @@ function ListFacilities() {
         setDeleteRoom(room);
     }
 
-    const handleViewMore = () => {
-        setVisibleRooms((prev) => prev + 6);
-    }
+    const handleViewMore = useCallback(() => {
+        setPage(page + 1);
+    }, [page])
 
     return (
         <>
@@ -86,8 +110,8 @@ function ListFacilities() {
                     <button onClick={handleSearch} className="btn btn-primary" type="button">Search</button>
                 </div>
                 <div className="row">
-                    {roomList.slice(0, visibleRooms).map((room) => (
-                        <div className="col-4" key={room.id}>
+                    {roomList.map((room, i) => (
+                        <div className="col-4" key={i}>
                             <div className="card" onClick={() => handleRoomClick(room)}>
                                 <img src={room.image} className="card-img-top" alt="..." />
                                 <div className="card-body">
@@ -98,7 +122,7 @@ function ListFacilities() {
                         </div>
                     ))}
                 </div>
-                {visibleRooms < roomList.length && (
+                {hasLoadMore && (
                     <div className="text-center mt-3">
                         <button className="btn btn-primary" onClick={handleViewMore}>View More</button>
                     </div>

@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 
 function EditComponent() {
-    const {id} = useParams();
+    const { id} = useParams();
     const [typeList, setTypeList] = useState([]);
     const [room, setRoom] = useState(null);
     useEffect(() => {
@@ -16,7 +16,7 @@ function EditComponent() {
             setTypeList(type);
         }
         fetchData()
-    })
+    },[]);
     useEffect(() => {
         const fetchRoom = async () => {
             let room = await getRoomByID(id);
@@ -26,7 +26,7 @@ function EditComponent() {
             setRoom(room);
         }
         fetchRoom()
-    }, []);
+    }, [id]);
     const navigate = useNavigate();
     const handleSubmitEdit = async (value) => {
         const newRoom = {
