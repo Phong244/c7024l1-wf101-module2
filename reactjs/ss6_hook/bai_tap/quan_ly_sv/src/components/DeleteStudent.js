@@ -20,6 +20,7 @@ function DeleteStudent({isShowModal, deleteStudent, handleIsLoading, handleClose
                             </div>
                             <div className="modal-body">
                                 <p>Do you want to delete {deleteStudent.name}???</p>
+                                <button>Detail Student</button>
                             </div>
                             <div className="modal-footer">
                                 <button onClick={handleCloseModal} type="button" className="btn btn-secondary"

@@ -1,0 +1,138 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Villa Deluxe",
+      "size": "100",
+      "price": "500$/day",
+      "maxGuest": "4",
+      "image": "/assets/images/image_800x_ (1).avif",
+      "type": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Ocean Studio Suite",
+      "size": "40.1",
+      "price": "300$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/image_800x_ (2).avif",
+      "type": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Ocean Deluxe",
+      "size": "43.7",
+      "price": "350$/day",
+      "maxGuest": "3",
+      "image": "/assets/images/image_800x_.avif",
+      "type": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Lagoon Superior",
+      "size": "40.1",
+      "price": "250$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/OIP-(1).jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Garden Superior",
+      "size": "40.1",
+      "price": "200$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/OIP-(2).jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Garden Deluxe",
+      "size": "40.1",
+      "price": "220$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/OIP-(3).jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Garden Deluxe",
+      "size": 35.1,
+      "price": "220$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/OIP.jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Garden Deluxe",
+      "size": "40.1",
+      "price": "220$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/pano_f.jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Garden Deluxe",
+      "size": "40.1",
+      "price": "220$/day",
+      "maxGuest": "2",
+      "image": "/assets/images/R.jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "name": "Ocean Park",
+      "size": 2,
+      "price": "30$/day",
+      "maxGuest": 3,
+      "image": "https://nqs.1cdn.vn/2024/05/24/i.ex-cdn.com-chatluongvacuocsong.vn-files-content-2024-05-24-_villa-1-1506.jpg",
+      "type": {
+        "id": 2,
+        "name": "House"
+      },
+      "id": 10
+    }
+  ],
+  "type": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ]
+}

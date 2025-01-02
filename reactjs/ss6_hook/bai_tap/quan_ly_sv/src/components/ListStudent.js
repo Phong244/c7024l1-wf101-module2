@@ -68,6 +68,7 @@ const ListStudent = () => {
                     <th>STT</th>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Detail</th>
                     <th>Delete</th>
                 </tr>
                 </thead>
@@ -77,6 +78,13 @@ const ListStudent = () => {
                         <td>{i + 1}</td>
                         <td>{student.id}</td>
                         <td>{student.name}</td>
+
+                        <td>
+                            <button onClick={() => {
+                                console.log('Detail')
+                            }}>Detail
+                            </button>
+                        </td>
                         <td>
                             <button onClick={() => {
                                 handleShowModal(student);
