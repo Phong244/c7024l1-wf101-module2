@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import {getRoomByID, updateRoom} from "../service/roomService";
+import {getRoomByID, updateRoom} from "../service/productService";
 import {getAllType} from "../service/typeService";
 import {toast} from "react-toastify";
 import * as Yup from "yup";
@@ -21,7 +21,8 @@ function EditComponent() {
         const fetchRoom = async () => {
             let room = await getRoomByID(id);
             room = {
-                ...room, type: JSON.stringify(room.type)
+                ...room,
+                type: JSON.stringify(room.type)
             }
             setRoom(room);
         }

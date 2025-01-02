@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {getAllType} from "../service/typeService";
-import {addNewRoom} from "../service/roomService";
+import {addNewRoom} from "../service/productService";
 import * as Yup from "yup";
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {toast} from "react-toastify";
@@ -37,7 +37,6 @@ function AddComponent() {
                 ...rest,
                 type: newType
             }
-            console.log('room', room);
             await addNewRoom(room);
             toast.success("Add room successfully!");
             navigate("/home");
@@ -53,8 +52,6 @@ function AddComponent() {
         image: Yup.string().required("Image is required"),
         type: Yup.number().required("Type is required"),
     })
-
-    console.log('typeList:', typeList);
 
     return (
         <div>

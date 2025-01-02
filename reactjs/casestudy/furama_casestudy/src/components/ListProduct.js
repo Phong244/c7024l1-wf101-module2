@@ -1,67 +1,42 @@
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min";
-import { deleteRoomById, searchRoom } from "../service/roomService";
+import { deleteRoomById, searchRoom } from "../service/productService";
 import { getAllType } from "../service/typeService";
 import { Link } from "react-router-dom";
 import { Modal } from "react-bootstrap";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-function ListFacilities() {
+function ListProduct() {
     const [roomList, setRoomList] = useState([]);
     const [typeList, setTypeList] = useState([]);
     const searchNameRef = useRef();
     const searchTypeRef = useRef();
+    const [isSearch, setIsSearch] = useState(false);
     const [selectedRoom, setSelectedRoom] = useState(null);
     const [deleteRoom, setDeleteRoom] = useState(null);
     const [show, setShow] = useState(false);
-    const [page, setPage] = useState(1);
-    const limit = 10;
-    const [hasLoadMore, setHasLoadMore] = useState(true);
+    const [visibleRooms, setVisibleRooms] = useState(6);
 
-    const fetchRooms = useCallback(
-        async () => {
+    useEffect(() => {
+        const fetchData = async () => {
             let name = searchNameRef.current.value;
             let type = searchTypeRef.current.value;
-            const data = await searchRoom(name, type, page);
-            if (page === 1) {
-                setRoomList(data);
-            } else {
-                setRoomList(prev => [...prev, ...data]);
-            }
-
-            if (data.length < limit) {
-                setHasLoadMore(false);
-            } else {
-                setHasLoadMore(true);
-            }
-        },
-        [page],
-    );
-
-    const fetchType = useCallback(() => {
-        getAllType().then((data) => setTypeList(data));
-    }, [])
-
-    useEffect(() => {
-        fetchType();
-    }, [fetchType])
-
-    useEffect(() => {
-        fetchRooms();
-    }, [fetchRooms, page]);
-
-    const handleSearch = useCallback(() => {
-        if  (page === 1) {
-            console.log('vo 1');
-            setPage(1);
-            fetchRooms();
-        } else {
-            console.log('vo 2');
-            setPage(1);
+            const data = await searchRoom(name, type);
+            setRoomList(data);
         }
-    }, [page, fetchRooms])
+        const fetchType = async () => {
+            setTypeList(await getAllType());
+        }
+        fetchData();
+        fetchType();
+    }, [isSearch]);
+
+    const handleSearch = async () => {
+        setIsSearch((prevState) => !prevState);
+        setVisibleRooms(6);
+    }
 
     const handleRoomClick = (room) => {
         setSelectedRoom(room);
@@ -73,6 +48,7 @@ function ListFacilities() {
 
     const handleDelete = async () => {
         await deleteRoomById(deleteRoom.id);
+        setIsSearch((prevState) => !prevState);
         setDeleteRoom(null);
         handleCloseModalDelete();
         handleCloseModal();
@@ -88,9 +64,9 @@ function ListFacilities() {
         setDeleteRoom(room);
     }
 
-    const handleViewMore = useCallback(() => {
-        setPage(page + 1);
-    }, [page])
+    const handleViewMore = () => {
+        setVisibleRooms((prev) => prev + 6);
+    }
 
     return (
         <>
@@ -110,8 +86,8 @@ function ListFacilities() {
                     <button onClick={handleSearch} className="btn btn-primary" type="button">Search</button>
                 </div>
                 <div className="row">
-                    {roomList.map((room, i) => (
-                        <div className="col-4" key={i}>
+                    {roomList.slice(0, visibleRooms).map((room) => (
+                        <div className="col-4" key={room.id}>
                             <div className="card" onClick={() => handleRoomClick(room)}>
                                 <img src={room.image} className="card-img-top" alt="..." />
                                 <div className="card-body">
@@ -122,7 +98,7 @@ function ListFacilities() {
                         </div>
                     ))}
                 </div>
-                {hasLoadMore && (
+                {visibleRooms < roomList.length && (
                     <div className="text-center mt-3">
                         <button className="btn btn-primary" onClick={handleViewMore}>View More</button>
                     </div>
@@ -162,4 +138,4 @@ function ListFacilities() {
     );
 }
 
-export default ListFacilities;
+export default ListProduct;
