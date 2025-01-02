@@ -239,18 +239,6 @@
         "id": 2,
         "name": "House"
       }
-    },
-    {
-      "name": "Ocean Viet",
-      "size": 2,
-      "price": "30$/day",
-      "maxGuest": 2,
-      "image": "https://nqs.1cdn.vn/2024/05/24/i.ex-cdn.com-chatluongvacuocsong.vn-files-content-2024-05-24-_villa-1-1506.jpg",
-      "type": {
-        "id": 1,
-        "name": "Villa"
-      },
-      "id": 21
     }
   ],
   "type": [

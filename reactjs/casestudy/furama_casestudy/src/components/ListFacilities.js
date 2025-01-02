@@ -77,10 +77,12 @@ function ListFacilities() {
         handleCloseModalDelete();
         handleCloseModal();
         toast.success("Delete room successfully!");
+        fetchRooms();
     }
 
     const handleCloseModalDelete = () => {
         setShow(preState => !preState);
+
     }
 
     const handleShowModalDelete = (room) => {
