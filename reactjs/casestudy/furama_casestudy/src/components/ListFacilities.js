@@ -35,6 +35,7 @@ function ListFacilities() {
 
     const handleSearch = async () => {
         setIsSearch((prevState) => !prevState);
+        setVisibleRooms(6);
     }
 
     const handleRoomClick = (room) => {

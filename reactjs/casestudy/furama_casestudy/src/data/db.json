@@ -2,11 +2,11 @@
   "rooms": [
     {
       "id": 1,
-      "name": "Villa Deluxe",
-      "size": "100",
-      "price": "500$/day",
-      "maxGuest": "4",
-      "image": "/assets/images/image_800x_ (1).avif",
+      "name": "Luxury Villa Sunrise",
+      "size": "120",
+      "price": "600$/day",
+      "maxGuest": "6",
+      "image": "https://songdaiduong.com.vn/wp-content/uploads/2022/04/sunrise-12.jpg",
       "type": {
         "id": 1,
         "name": "Villa"
@@ -14,11 +14,11 @@
     },
     {
       "id": 2,
-      "name": "Ocean Studio Suite",
-      "size": "40.1",
-      "price": "300$/day",
-      "maxGuest": "2",
-      "image": "/assets/images/image_800x_ (2).avif",
+      "name": "Cozy Ocean House",
+      "size": "50",
+      "price": "350$/day",
+      "maxGuest": "4",
+      "image": "https://i.ytimg.com/vi/BNECPlEQlrs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBrgYUobBVA_2JYaZ0ZYBhWfR5CyQ",
       "type": {
         "id": 2,
         "name": "House"
@@ -26,11 +26,11 @@
     },
     {
       "id": 3,
-      "name": "Ocean Deluxe",
-      "size": "43.7",
-      "price": "350$/day",
-      "maxGuest": "3",
-      "image": "/assets/images/image_800x_.avif",
+      "name": "Premium Ocean House",
+      "size": "70",
+      "price": "450$/day",
+      "maxGuest": "5",
+      "image": "https://oceanbayphuquoc.com/wp-content/uploads/2022/09/premium-ocean-breeze-bungalow_detail_02.jpg",
       "type": {
         "id": 2,
         "name": "House"
@@ -38,11 +38,11 @@
     },
     {
       "id": 4,
-      "name": "Lagoon Superior",
-      "size": "40.1",
-      "price": "250$/day",
+      "name": "Elegant Lagoon Room",
+      "size": "30",
+      "price": "200$/day",
       "maxGuest": "2",
-      "image": "/assets/images/OIP-(1).jpg",
+      "image": "https://pix10.agoda.net/hotelImages/861/861824/861824_16021209160039807408.jpg?ca=13&ce=1&s=414x232&ar=16x9",
       "type": {
         "id": 3,
         "name": "Room"
@@ -50,11 +50,11 @@
     },
     {
       "id": 5,
-      "name": "Garden Superior",
-      "size": "40.1",
-      "price": "200$/day",
-      "maxGuest": "2",
-      "image": "/assets/images/OIP-(2).jpg",
+      "name": "Deluxe Garden Room",
+      "size": "35",
+      "price": "250$/day",
+      "maxGuest": "3",
+      "image": "https://laverandaresorts.com/wp-content/uploads/2023/08/222-min.jpg",
       "type": {
         "id": 3,
         "name": "Room"
@@ -62,35 +62,35 @@
     },
     {
       "id": 6,
-      "name": "Garden Deluxe",
-      "size": "40.1",
-      "price": "220$/day",
-      "maxGuest": "2",
-      "image": "/assets/images/OIP-(3).jpg",
+      "name": "Family Villa Retreat",
+      "size": "150",
+      "price": "800$/day",
+      "maxGuest": "8",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/620776983.jpg?k=4228ac828fb2f6ab02dc27f290656bce70b00db0a2cd1748cb036c841eee0dcb&o=&hp=1",
       "type": {
-        "id": 3,
-        "name": "Room"
+        "id": 1,
+        "name": "Villa"
       }
     },
     {
       "id": 7,
-      "name": "Garden Deluxe",
-      "size": 35.1,
-      "price": "220$/day",
-      "maxGuest": "2",
-      "image": "/assets/images/OIP.jpg",
+      "name": "Seaside House Escape",
+      "size": "60",
+      "price": "400$/day",
+      "maxGuest": "4",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/513045367.jpg?k=4b1ce2bdf18a8addf836a3ec1c6986c8a3b88e919719c892a452b2bd338df9dc&o=&hp=1",
       "type": {
-        "id": 3,
-        "name": "Room"
+        "id": 2,
+        "name": "House"
       }
     },
     {
       "id": 8,
-      "name": "Garden Deluxe",
-      "size": "40.1",
-      "price": "220$/day",
+      "name": "Modern Lagoon Room",
+      "size": "25",
+      "price": "180$/day",
       "maxGuest": "2",
-      "image": "/assets/images/pano_f.jpg",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/555813839.jpg?k=b93c39d64fb090f2956a4f9289dd469b1bbf4cad8e266d99ca209d742aad2106&o=&hp=1",
       "type": {
         "id": 3,
         "name": "Room"
@@ -98,27 +98,147 @@
     },
     {
       "id": 9,
-      "name": "Garden Deluxe",
-      "size": "40.1",
-      "price": "220$/day",
+      "name": "Tropical Villa Bliss",
+      "size": "140",
+      "price": "750$/day",
+      "maxGuest": "7",
+      "image": "https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/t_htl-dskt/tix-hotel/images-web/2022/06/04/b2f855ee-bec5-404d-bab8-aeee6aec5e6a-1654331123530-6015acbd691fadad18cb4019e6baaca8.jpg",
+      "type": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Beachfront Paradise Room",
+      "size": "20",
+      "price": "150$/day",
       "maxGuest": "2",
-      "image": "/assets/images/R.jpg",
+      "image": "https://www.theluxurysignature.com/wp-content/uploads/2023/10/Beachfront-Paradise-Koh-Samui-Beachfront-Koh-Samui-17-1024x683.jpg",
       "type": {
         "id": 3,
         "name": "Room"
       }
     },
     {
-      "name": "Ocean Park",
-      "size": 2,
-      "price": "30$/day",
-      "maxGuest": 3,
-      "image": "https://nqs.1cdn.vn/2024/05/24/i.ex-cdn.com-chatluongvacuocsong.vn-files-content-2024-05-24-_villa-1-1506.jpg",
+      "id": 11,
+      "name": "Hilltop Villa Haven",
+      "size": "180",
+      "price": "900$/day",
+      "maxGuest": "10",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/303731043.jpg?k=16d33afb124010080fbd076693996c40afa8345abf8f0f02599529ccd317495d&o=&hp=1",
+      "type": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Countryside Cottage",
+      "size": "55",
+      "price": "300$/day",
+      "maxGuest": "4",
+      "image": "https://media.houseandgarden.co.uk/photos/6400935e4a54e5e4f114947f/16:9/w_2580,c_limit/89751-highres.jpg",
       "type": {
         "id": 2,
         "name": "House"
-      },
-      "id": 10
+      }
+    },
+    {
+      "id": 13,
+      "name": "Mountain View Room",
+      "size": "28",
+      "price": "170$/day",
+      "maxGuest": "2",
+      "image": "https://img.freepik.com/premium-photo/minimalistic-contemporary-hotel-room-with-mountain-view_818261-12759.jpg",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 14,
+      "name": "Riverside Retreat",
+      "size": "40",
+      "price": "350$/day",
+      "maxGuest": "3",
+      "image": "https://oms.hotdeal.vn/images/editors/sources/000350043427/350043-350043-body%20(2).jpg",
+      "type": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 15,
+      "name": "Luxury Penthouse Villa",
+      "size": "200",
+      "price": "1200$/day",
+      "maxGuest": "12",
+      "image": "https://i.ytimg.com/vi/yhKHqKaHRMw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBHEwD5bYtgoYlAC31KLRRqxi2M2Q",
+      "type": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 16,
+      "name": "Charming Garden Room",
+      "size": "30",
+      "price": "220$/day",
+      "maxGuest": "2",
+      "image": "https://a0.muscache.com/im/ml/photo_enhancement/pictures/miso/Hosting-51954622/original/bb29cc1b-dc71-41d4-ab68-cd7dd0dc72f3.jpeg?im_w=720&im_format=avif",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 17,
+      "name": "Oceanfront Suite",
+      "size": "65",
+      "price": "500$/day",
+      "maxGuest": "4",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/549244413.jpg?k=18b7622a4ae2e61aba9f6c3f7b74192e302c2701162f30f4abcaf44275a85b83&o=&hp=1",
+      "type": {
+        "id": 2,
+        "name": "House"
+      }
+    },
+    {
+      "id": 18,
+      "name": "Skyline Villa Paradise",
+      "size": "170",
+      "price": "1000$/day",
+      "maxGuest": "9",
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/526941029.jpg?k=12f63a73dbbf39bfba3242c075594c132f26d3114b6aa6bff1c02256065b40d8&o=&hp=1",
+      "type": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 19,
+      "name": "Cozy Attic Room",
+      "size": "22",
+      "price": "150$/day",
+      "maxGuest": "2",
+      "image": "https://i.ytimg.com/vi/eY5Qr-yud5g/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGH8gRCgiMA8=&rs=AOn4CLB8yqbSeLhqjJieRUY3H1M34xkmfw",
+      "type": {
+        "id": 3,
+        "name": "Room"
+      }
+    },
+    {
+      "id": 20,
+      "name": "Forest Cabin House",
+      "size": "50",
+      "price": "400$/day",
+      "maxGuest": "4",
+      "image": "https://www.shutterstock.com/shutterstock/photos/112937398/display_1500/stock-photo-modern-log-cabin-home-in-a-forest-environment-112937398.jpg",
+      "type": {
+        "id": 2,
+        "name": "House"
+      }
     }
   ],
   "type": [
